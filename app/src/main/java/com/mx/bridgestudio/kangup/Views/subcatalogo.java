@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.mx.bridgestudio.kangup.Adapters.AdaptadorType;
+import com.mx.bridgestudio.kangup.Adapters.AdaptadorSub;
 import com.mx.bridgestudio.kangup.Controllers.BaseActivity;
 import com.mx.bridgestudio.kangup.Models.ListCar;
 import com.mx.bridgestudio.kangup.Models.SampleDivider;
@@ -19,34 +19,34 @@ import com.mx.bridgestudio.kangup.R;
 import java.util.ArrayList;
 
 /**
- * Created by USUARIO on 24/10/2016.
+ * Created by Anthony on 11/11/2016.
  */
 
-public class TypesOfAutomobiles extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener {
+public class subcatalogo  extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener {
 
-  //  private ListView lista;
-   // private ArrayList<ListCar> tipos = new ArrayList<ListCar>();
-   // private ArrayAdapter<ListCar> AdapterArray;
-   // private ListView list;
-   // private AdaptadorList adaptador;
+    //  private ListView lista;
+    // private ArrayList<ListCar> tipos = new ArrayList<ListCar>();
+    // private ArrayAdapter<ListCar> AdapterArray;
+    // private ListView list;
+    // private AdaptadorList adaptador;
     private String opcionSeleccionada="";
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-   // private List items = new ArrayList();
+    // private List items = new ArrayList();
     ArrayList<ListCar> items= new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_types);
+        setContentView(R.layout.subcategoria);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarr);
-        toolbar.setTitle("Menu");
+        toolbar.setTitle("Castalia");
         setSupportActionBar(toolbar);
-            // Obtener el Recycler
+        // Obtener el Recycler
 
         recycler = (RecyclerView) findViewById(R.id.recycler_view);
         recycler.setHasFixedSize(true);
-            // Usar un administrador para LinearLayout
+        // Usar un administrador para LinearLayout
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
         final RecyclerView.ItemDecoration itemDecoration = new SampleDivider(this);
@@ -55,25 +55,10 @@ public class TypesOfAutomobiles extends BaseActivity implements View.OnClickList
                 new RecyclerItemClickListener(this, recycler ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         Toast.makeText(view.getContext(), "position = " +items.get(position).getName(), Toast.LENGTH_SHORT).show();
-                        if(position == 0){
-                            Intent intent = new Intent().setClass(
-                                    TypesOfAutomobiles.this, RegisterActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }else if(position == 1){
-                            Intent intent = new Intent().setClass(
-                                    TypesOfAutomobiles.this, CarsXtype.class);
-                            startActivity(intent);
-                            finish();
-                        }else{
-                            Intent intent = new Intent().setClass(
-                                    TypesOfAutomobiles.this, compra.class);
-                            startActivity(intent);
-                            finish();
-                        }
-
-
-
+                        //   Intent intent = new Intent().setClass(
+                        //           CarsXtype.this, CatalogCar.class);
+                        //  startActivity(intent);
+                        //  finish();
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
@@ -81,8 +66,8 @@ public class TypesOfAutomobiles extends BaseActivity implements View.OnClickList
                     }
                 })
         );
-            // Crear un nuevo adaptador
-        adapter = new AdaptadorType(items);
+        // Crear un nuevo adaptador
+        adapter = new AdaptadorSub(items);
         recycler.setAdapter(adapter);
         fillList();
     }
@@ -97,19 +82,21 @@ public class TypesOfAutomobiles extends BaseActivity implements View.OnClickList
 
     }
     public void fillList(){
-        ListCar[] list = new ListCar[3];
-        list[0] = new ListCar(1,"REGISTRO","NA");
-        list[1] = new ListCar(2,"CATALOGO","NA");
-        list[2] = new ListCar(3,"COMPRAS","NA");
+        ListCar[] list = new ListCar[5];
+        list[0] = new ListCar(1,"DAMA","NA");
+        list[1] = new ListCar(2,"CABALLERO","NA");
+        list[2] = new ListCar(3,"NIÑO","NA");
+        list[3] = new ListCar(4,"NIÑA","NA");
+        list[4] = new ListCar(5,"JOVEN","NA");
 
         for(int x=0;x<list.length;x++){
-           items.add(x,list[x]);
+            items.add(x,list[x]);
         }
     }
 
     public void onBackPressed()
     {
-        Intent setIntent = new Intent(this,LoginActivity.class);
+        Intent setIntent = new Intent(this,TypesOfAutomobiles.class);
         startActivity(setIntent);
         finish();
     }
