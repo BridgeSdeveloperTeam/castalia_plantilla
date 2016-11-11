@@ -4,22 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,9 +23,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mx.bridgestudio.kangup.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A login screen that offers login via email/password.
@@ -47,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
     private ImageView logo;
-    private Button guest,register,forgot;
+    private Button guest,register,forgot,socio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 startActivity(new Intent(LoginActivity.this, TypesOfAutomobiles.class));
             }
         });
-        register = (Button)findViewById(R.id.register);
+        register = (Button)findViewById(R.id.registerA);
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
@@ -83,6 +76,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        socio = (Button)findViewById(R.id.socio);
+        socio.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                finish();
+                startActivity(new Intent(LoginActivity.this, SocioActivity.class));
+            }
+        });
+
 
         mPasswordView = (EditText) findViewById(R.id.passwordeye);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -96,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.signin);
+        Button mEmailSignInButton = (Button) findViewById(R.id.enter);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

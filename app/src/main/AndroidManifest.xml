@@ -36,7 +36,6 @@
             android:name=".Views.CarsXtype"
             android:label="@string/title_activity_types"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".Views.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,7 +55,8 @@
         <activity
             android:name=".Views.ProfileActivity"
             android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Views.SocioActivity"></activity>
     </application>
 
 </manifest>

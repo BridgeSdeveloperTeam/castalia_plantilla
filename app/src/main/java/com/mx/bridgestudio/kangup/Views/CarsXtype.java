@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.mx.bridgestudio.kangup.Adapters.AdaptadorType;
+import com.mx.bridgestudio.kangup.Adapters.AdapterCarsxType;
 import com.mx.bridgestudio.kangup.Controllers.BaseActivity;
 import com.mx.bridgestudio.kangup.Models.ListCar;
 import com.mx.bridgestudio.kangup.Models.SampleDivider;
@@ -67,7 +68,7 @@ public class CarsXtype extends BaseActivity implements View.OnClickListener, Ada
                 })
         );
         // Crear un nuevo adaptador
-        adapter = new AdaptadorType(items);
+        adapter = new AdapterCarsxType(items);
         recycler.setAdapter(adapter);
         fillList();
     }
@@ -82,14 +83,24 @@ public class CarsXtype extends BaseActivity implements View.OnClickListener, Ada
 
     }
     public void fillList(){
-        ListCar list = new ListCar();
+        /*ListCar list = new ListCar();
         list.setName( "Articulos del Catalogo");
         list.setDescription("Breve descripcion del producto");
-        list.setImage("R.drawable.zapato");
+        list.setImage("R.drawable.zapato");*/
 
-        for(int x=0;x<4;x++){
+        /*for(int x=0;x<4;x++){
             items.add(x,list);
+        }*/
+        ListCar list [] = new ListCar[3];
+        list[0] = new ListCar(1,"Castalia","nada");
+        list[1] = new ListCar(2,"Trevo","nada");
+        list[2] = new ListCar(3,"Ofertas","nada");
+
+        for(int x=0; x<3;x++)
+        {
+            items.add(x,list[x]);
         }
+
     }
     public void onBackPressed()
     {

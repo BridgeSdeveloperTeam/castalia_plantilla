@@ -16,10 +16,10 @@ import java.util.List;
 /**
  * Created by Anthony on 02/11/2016.
  */
-public class AdaptadorType extends RecyclerView.Adapter<AdaptadorType.AnimeViewHolder>  {
+public class AdapterCarsxType extends RecyclerView.Adapter<AdapterCarsxType.AnimeViewHolder> {
     private List<ListCar> items;
 
-    public AdaptadorType(List<ListCar> items) {
+    public AdapterCarsxType(List<ListCar> items) {
         this.items = items;
     }
     @Override
@@ -29,7 +29,7 @@ public class AdaptadorType extends RecyclerView.Adapter<AdaptadorType.AnimeViewH
     @Override
     public AnimeViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.celltipo, viewGroup, false);
+                .inflate(R.layout.cell_carsxtype, viewGroup, false);
         return new AnimeViewHolder(v);
     }
 
@@ -47,16 +47,14 @@ public class AdaptadorType extends RecyclerView.Adapter<AdaptadorType.AnimeViewH
             super(v);
             imagen = (ImageView) v.findViewById(R.id.image_catalog);
             nombre = (TextView) v.findViewById(R.id.name_catalog);
-            descripcion = (TextView) v.findViewById(R.id.description);
         }
     }
     @Override
     public void onBindViewHolder(AnimeViewHolder viewHolder, int i) {
-       // viewHolder.imagen.setImageResource(items.get(i).getImage());
+        // viewHolder.imagen.setImageResource(items.get(i).getImage());
 
-        viewHolder.imagen.setImageResource(R.drawable.zapato);
+        viewHolder.imagen.setImageResource(R.color.colorAccent);
         viewHolder.nombre.setText(items.get(i).getName());
-        viewHolder.descripcion.setText(String.valueOf(items.get(i).getDescription()));
     }
 
 }

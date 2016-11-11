@@ -84,20 +84,25 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_camera) {
             Intent intent = new Intent().setClass(BaseActivity.this, ProfileActivity.class);
+            finish();
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent().setClass(
                     this, RegisterActivity.class);
+            finish();
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent().setClass(
                     this, TypesOfAutomobiles.class);
+            finish();
             startActivity(intent);
         } else if (id == R.id.nav_manage) {
             Intent intent = new Intent().setClass(BaseActivity.this, ProfileActivity.class);
+            finish();
             startActivity(intent);
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent().setClass(this, LoginActivity.class);
+            finish();
             startActivity(intent);
         } else if (id == R.id.nav_send) {
 

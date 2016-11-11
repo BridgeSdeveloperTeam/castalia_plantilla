@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish(); // close this activity and return to preview activity (if there is any)
-                startActivity(new Intent(RegisterActivity.this, AddPaymentActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }
         });
     }
