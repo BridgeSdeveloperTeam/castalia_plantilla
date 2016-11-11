@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mx.bridgestudio.kangup">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,12 +17,22 @@
             android:name=".Views.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Views.compra"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Views.ForgotActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
+
         <activity
             android:name=".Views.TypesOfAutomobiles"
+            android:label="Castalia"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.subcatalogo"
             android:label="Castalia"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

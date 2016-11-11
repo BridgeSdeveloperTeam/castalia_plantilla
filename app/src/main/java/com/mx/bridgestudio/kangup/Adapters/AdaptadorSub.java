@@ -14,12 +14,13 @@ import com.mx.bridgestudio.kangup.R;
 import java.util.List;
 
 /**
- * Created by Anthony on 02/11/2016.
+ * Created by Anthony on 11/11/2016.
  */
-public class AdaptadorType extends RecyclerView.Adapter<AdaptadorType.AnimeViewHolder>  {
+
+public class AdaptadorSub extends RecyclerView.Adapter<AdaptadorType.AnimeViewHolder>  {
     private List<ListCar> items;
 
-    public AdaptadorType(List<ListCar> items) {
+    public AdaptadorSub(List<ListCar> items) {
         this.items = items;
     }
     @Override
@@ -27,10 +28,10 @@ public class AdaptadorType extends RecyclerView.Adapter<AdaptadorType.AnimeViewH
         return items.size();
     }
     @Override
-    public AnimeViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public AdaptadorType.AnimeViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.celltipo, viewGroup, false);
-        return new AnimeViewHolder(v);
+                .inflate(R.layout.cell_sub, viewGroup, false);
+        return new AdaptadorType.AnimeViewHolder(v);
     }
 
     public Resources getResources() {
@@ -47,12 +48,12 @@ public class AdaptadorType extends RecyclerView.Adapter<AdaptadorType.AnimeViewH
             super(v);
             imagen = (ImageView) v.findViewById(R.id.image_type);
             nombre = (TextView) v.findViewById(R.id.name);
-        //    descripcion = (TextView) v.findViewById(R.id.description);
+            //    descripcion = (TextView) v.findViewById(R.id.description);
         }
     }
     @Override
-    public void onBindViewHolder(AnimeViewHolder viewHolder, int i) {
-       // viewHolder.imagen.setImageResource(items.get(i).getImage());
+    public void onBindViewHolder(AdaptadorType.AnimeViewHolder viewHolder, int i) {
+        // viewHolder.imagen.setImageResource(items.get(i).getImage());
 
         viewHolder.imagen.setImageResource(R.drawable.zapato);
         viewHolder.nombre.setText(items.get(i).getName());

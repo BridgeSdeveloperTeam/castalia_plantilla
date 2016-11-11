@@ -33,13 +33,13 @@ public class ListCar {
         return Name;
     }
     public void setName(String name) {
-        Name = name;
+        this.Name = name;
     }
     public String getDescription() {
         return Description;
     }
     public void setDescription(String description) {
-        Description = description;
+        this.Description = description;
     }
     public String getImage() {return image;}
     public void setImage(String image) {this.image = image;}
