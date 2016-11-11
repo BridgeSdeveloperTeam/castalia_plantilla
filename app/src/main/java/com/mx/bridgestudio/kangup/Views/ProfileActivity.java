@@ -1,5 +1,6 @@
 package com.mx.bridgestudio.kangup.Views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.AppBarLayout;
@@ -44,5 +45,12 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void onBackPressed()
+    {
+        Intent setIntent = new Intent(this,LoginActivity.class);
+        startActivity(setIntent);
+        finish();
     }
 }

@@ -4,6 +4,7 @@ package com.mx.bridgestudio.kangup.Controllers;
  * Created by USUARIO on 25/10/2016.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mx.bridgestudio.kangup.R;
+import com.mx.bridgestudio.kangup.Views.LoginActivity;
+import com.mx.bridgestudio.kangup.Views.ProfileActivity;
+import com.mx.bridgestudio.kangup.Views.RegisterActivity;
+import com.mx.bridgestudio.kangup.Views.TypesOfAutomobiles;
 
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -78,15 +83,22 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent intent = new Intent().setClass(BaseActivity.this, ProfileActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent().setClass(
+                    this, RegisterActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
-
+            Intent intent = new Intent().setClass(
+                    this, TypesOfAutomobiles.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
-
+            Intent intent = new Intent().setClass(BaseActivity.this, ProfileActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
-
+            Intent intent = new Intent().setClass(this, LoginActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_send) {
 
         }

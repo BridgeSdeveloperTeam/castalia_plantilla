@@ -12,7 +12,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarRegister"
         android:layout_height="56dp"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorAccent"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:theme="@style/ToolbarColoredBackArrow"
         tools:ignore="MissingConstraints"
@@ -173,7 +173,7 @@
 
             <Button
                 android:text="Siguiente"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/next"
                 android:layout_marginStart="16dp"

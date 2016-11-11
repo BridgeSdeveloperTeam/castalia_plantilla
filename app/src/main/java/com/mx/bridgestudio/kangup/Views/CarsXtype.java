@@ -40,7 +40,7 @@ public class CarsXtype extends BaseActivity implements View.OnClickListener, Ada
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_types);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarr);
-        toolbar.setTitle("Modelos de autos");
+        toolbar.setTitle("Castalia");
         setSupportActionBar(toolbar);
         // Obtener el Recycler
 
@@ -55,10 +55,10 @@ public class CarsXtype extends BaseActivity implements View.OnClickListener, Ada
                 new RecyclerItemClickListener(this, recycler ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         Toast.makeText(view.getContext(), "position = " +items.get(position).getName(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent().setClass(
-                                CarsXtype.this, CatalogCar.class);
-                        startActivity(intent);
-                        finish();
+                     //   Intent intent = new Intent().setClass(
+                     //           CarsXtype.this, CatalogCar.class);
+                      //  startActivity(intent);
+                      //  finish();
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
@@ -83,12 +83,18 @@ public class CarsXtype extends BaseActivity implements View.OnClickListener, Ada
     }
     public void fillList(){
         ListCar list = new ListCar();
-        list.setName( "Modelos de automoviles");
-        list.setDescription("Breve descripcion del tipo de automovil");
-        list.setImage("R.drawable.auto");
+        list.setName( "Articulos del Catalogo");
+        list.setDescription("Breve descripcion del producto");
+        list.setImage("R.drawable.zapato");
 
         for(int x=0;x<4;x++){
             items.add(x,list);
         }
+    }
+    public void onBackPressed()
+    {
+        Intent setIntent = new Intent(this,TypesOfAutomobiles.class);
+        startActivity(setIntent);
+        finish();
     }
 }

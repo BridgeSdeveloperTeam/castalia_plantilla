@@ -40,7 +40,7 @@ public class TypesOfAutomobiles extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_types);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarr);
-        toolbar.setTitle("Tipos de autos");
+        toolbar.setTitle("Menu");
         setSupportActionBar(toolbar);
             // Obtener el Recycler
 
@@ -83,12 +83,19 @@ public class TypesOfAutomobiles extends BaseActivity implements View.OnClickList
     }
     public void fillList(){
         ListCar list = new ListCar();
-        list.setName( "Tipos de automoviles");
-        list.setDescription("Breve descripcion del tipo de automovil");
-        list.setImage("R.drawable.auto");
+        list.setName( "Opciones del menu ");
+        list.setDescription("Breve descripcion");
+        list.setImage("R.drawable.zapato");
 
         for(int x=0;x<4;x++){
             items.add(x,list);
         }
+    }
+
+    public void onBackPressed()
+    {
+        Intent setIntent = new Intent(this,LoginActivity.class);
+        startActivity(setIntent);
+        finish();
     }
 }
